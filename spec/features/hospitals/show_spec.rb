@@ -20,9 +20,11 @@ describe 'As a visitor' do
 
       expect(page).to have_content("#{happy_hospital.name}")
       expect(page).to have_content(5)
-      expect(page).to have_content("Harvard")
-      expect(page).to have_content("Florida State")
-      expect(page).to have_content("Columbia")
+      within 'div' do
+      expect(page).to have_content("Harvard").once
+      expect(page).to have_content("Florida State").once
+      expect(page).to have_content("Columbia").once
+      end
     end
   end
 end
